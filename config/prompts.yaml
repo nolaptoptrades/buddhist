@@ -1,0 +1,78 @@
+# Jobs for scripts/generate.py.  Edit freely; every job is run `takes` times
+# with seeds seed, seed+1, ...  Finished takes are skipped on re-run, so you
+# can add jobs / takes and re-run without redoing old work.
+
+defaults:
+  model: acestep-v15-turbo     # 2B turbo DiT. Fits a free Colab T4 easily.
+  steps: 8                     # turbo is designed for 8
+  shift: 3.0                   # recommended for turbo models
+  duration: 240                # seconds (10-600)
+  takes: 3                     # how many different seeds per job
+  seed: 1000                   # first seed
+  format: flac                 # flac | wav | mp3
+  vocal_language: unknown      # use "zh" for Chinese lyrics, "en", "ja", ...
+
+jobs:
+  # ---------- instrumental beds (test first: the model leans toward vocals) ----------
+  - name: bowls_drone
+    instrumental: true
+    duration: 300
+    bpm: 50
+    caption: >-
+      slow ambient meditation music, tibetan singing bowls, warm sustained pad
+      drone, deep soft tones, no drums, no percussion, very calm, spacious
+      reverb, minimal movement, peaceful
+
+  - name: bamboo_flute_calm
+    instrumental: true
+    duration: 300
+    bpm: 55
+    caption: >-
+      calm bamboo flute over soft drone and distant temple bell, slow tempo,
+      no drums, sparse and spacious, meditative, warm, gentle
+
+  - name: deep_focus_pad
+    instrumental: true
+    duration: 360
+    bpm: 60
+    caption: >-
+      deep focus ambient, evolving warm synth pads, soft low hum, very slow
+      changes, no percussion, no melody hook, steady and unobtrusive, study music
+
+  # ---------- wordless vocal pad (no pronunciation risk) ----------
+  - name: om_vocal_drone
+    duration: 240
+    vocal_language: en
+    caption: >-
+      deep male monk chant drone, sustained overtone "om" vowel, very slow,
+      singing bowl, long reverb, calm, meditative, no drums
+    lyrics: |
+      [verse]
+      Om
+      Om
+      Om
+      Om
+
+  # ---------- short, well-known phrase (listen carefully for pronunciation) ----------
+  - name: namo_amituofo
+    duration: 240
+    vocal_language: zh
+    caption: >-
+      slow buddhist chanting, steady monotone male voices in unison, soft wooden
+      fish muyu, distant temple bell, warm reverb, meditative, no drums
+    lyrics: |
+      [verse]
+      南無阿彌陀佛
+      南無阿彌陀佛
+      南無阿彌陀佛
+      南無阿彌陀佛
+
+  # ---------- your own text: paste into texts/da_bei_zhou.txt first ----------
+  - name: da_bei_zhou
+    enabled: false             # set true after you fill the text file
+    duration: 300
+    vocal_language: zh
+    caption: >-
+      slow steady buddhist recitation, calm male voices, soft muyu wooden fish,
+      temple bell, warm reverb, meditative, no drums, no melody hook
+    lyrics_file: texts/da_bei_zhou.txt

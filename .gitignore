@@ -1,0 +1,7 @@
+vendor/
+out/
+final/
+footage/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

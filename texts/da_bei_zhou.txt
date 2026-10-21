@@ -1,0 +1,11 @@
+# Paste the Da Bei Zhou (大悲咒) text here, copied from a source you trust.
+# Lines starting with '#' are ignored.
+# Put it in sections, e.g.:
+#
+# [verse]
+# <line 1>
+# <line 2>
+#
+# Tip: if a syllable is sung wrong, try writing just that line in pinyin
+# with tone numbers and regenerate (keep vocal_language: zh).
+# Use the plain traditional text, not someone's annotated edition.
